@@ -6,7 +6,7 @@ import java.beans.XMLEncoder;
 import java.io.FileOutputStream;
 import java.io.BufferedOutputStream;
 
-	//main class
+	//main
 
 public class Main
 {
