@@ -5,11 +5,9 @@ import java.util.*;
 import java.beans.XMLEncoder;
 import java.io.FileOutputStream;
 import java.io.BufferedOutputStream;
+
 <<<<<<< HEAD
 
-//ceci est une modification qui nique le projet :) test test qmlfujghqefuiopm
-=======
-	//main class
 
 >>>>>>> branch 'main' of https://github.com/lucas47000/Projet_GLPOO_S6
 public class Main
