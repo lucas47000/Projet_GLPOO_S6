@@ -11,7 +11,7 @@ public class Main
 {
  	public static void main (String[] args) {
 
-		MusicHub theHubTESTASUPPRIMERqmdouifovyçp = new MusicHub ();
+		MusicHub theHubTESTASUPPRIMERqmdouifovyçpdghszryhjzsyjk = new MusicHub ();
 		
 		System.out.println("Type h for available commands");
 		
