@@ -29,11 +29,9 @@ public class MenuPrincipal {
 		  case "c":
 			  //ICI : appel methode
 			  MenuChansons.askNewChanson();
-				
-				
 			  break;
 		  case "l":
-			  MenuLivresAudios.menuLivresAudios();
+			  MenuLivresAudios.askNewLivre();
 			  break;
 		  case "a":
 			  MenuAlbums.menuAlbums();

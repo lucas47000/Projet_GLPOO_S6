@@ -1,47 +1,55 @@
 package interfaces.Menus;
-
 import java.util.Scanner;
 
 import interfaces.Console.BasConsole;
 import interfaces.Console.EnTeteConsole;
+import models.Livre;
+import models.Livres;
+import models.categories;
+import models.langues;
 
 public class MenuLivresAudios {
 	
-	public static void main(String[] Args){
-		MenuLivresAudios.menuLivresAudios();
+	 static Livre askNewLivre(){
+		Scanner saisieLivre = new Scanner(System.in);
+
+		System.out.println("saisir le titre");
+		String titre = saisieLivre.nextLine();
+
+		System.out.println("saisir l'auteur");
+		String auteur = saisieLivre.nextLine();
+
+		System.out.println("saisir la duree");
+	    int duree = new Integer(saisieLivre.nextLine());	
+
+		System.out.println("chemin du fichier");
+		String fichier = saisieLivre.nextLine();	
+		
+		System.out.println("choisir la categorie (saisir le numero)");
+		categories[] valuesArray = categories.values();
+		for(int i = 0; i < valuesArray.length; i++){
+			System.out.println(valuesArray[i]);
+		}
+		int categorieId = new Integer(saisieLivre.nextLine());
+		String categorieStr = valuesArray[categorieId - 1].getCategorie();
+
+		System.out.println("choisir la langue (saisir le numero)");
+		langues[] valuesArray2 = langues.values();	
+		for(int i = 0; i < valuesArray2.length; i++){
+			System.out.println(valuesArray2[i]);
+		}
+		int langueId = new Integer(saisieLivre.nextLine());
+		String langueStr = valuesArray2[langueId - 1].getLangue();
+
+		Livre newLivre = new Livre(titre, auteur, duree, 0, fichier, categorieStr, langueStr);
+		return newLivre;
 	}
 
-	public static void menuLivresAudios() {
-		EnTeteConsole.enTeteMenu("MENU LIVRES AUDIOS");
-		EnTeteConsole.question(false, "Que souhaitez-vous faire ?\n\n");
-		
-		System.out.print (	"	- Afficher les livres audios d'un auteur ? |Entrez 'a'|\n\n"+
-							"	- Ajouter un nouveau livre audio ?         |Entrez 'n'|\n\n\n");
-		BasConsole.afficheRetourMenuPrincipal();
-		BasConsole.demanderReponse();
-		switchMenuLivresAudios();
+	private static void afficheLivres(Livres listeLivre){
+		listeLivre.affiche();
 	}
 
-	public static void switchMenuLivresAudios() {
-		String reponse = new String();
-		Scanner sc = new Scanner(System.in);
-		reponse = sc.nextLine();
-		
-		switch(reponse) {
-		  case "a":
-			  System.out.print("ICI METHODE QUI DEMANDE NOM AUTEUR POUR AFFICHAGE LIVRES AUDIOS");
-			  MenuLivresAudios.menuLivresAudios();
-			  break;
-		  case "n":
-			  System.out.print("ICI METHODE AJOUT LIVRE AUDIO");
-			  MenuLivresAudios.menuLivresAudios();
-			  break;
-		  case "p":
-			  MenuPrincipal.menuPrincipal();
-			  break;
-		  default:
-			  System.out.print ("Saisie incorrecte, veuillez réessayer : ");
-			  MenuLivresAudios.menuLivresAudios();
-		}		
+	private static void saveLivres(Livres listeLivre){
+		listeLivre.save("saveLivre.data");
 	}
 }
