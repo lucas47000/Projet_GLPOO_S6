@@ -28,12 +28,12 @@ public class MenuPrincipal {
 		switch(reponse) {
 		  case "c":
 			  //ICI : appel methode
-			  System.out.print("ICI METHODE D'AJOUT NOUVELLE CHANSON");
-				BasConsole.workInProgress("Ajout d'une nouvelle chanson", "principal");
-				MenuPrincipal.menuPrincipal();
+			  MenuChansons.askNewChanson();
+				
+				
 			  break;
 		  case "l":
-			  MenuLivresAudios.menuLivresAudios();;
+			  MenuLivresAudios.menuLivresAudios();
 			  break;
 		  case "a":
 			  MenuAlbums.menuAlbums();
