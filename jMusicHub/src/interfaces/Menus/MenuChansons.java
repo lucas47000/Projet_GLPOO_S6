@@ -1,8 +1,16 @@
 package interfaces.Menus;
+import java.util.Scanner;
+
+import models.Chanson;
+import models.Chansons;
+import models.genres;
+
 
 public class MenuChansons {
-
-	private static chanson askNewChanson(){
+	
+	
+	
+	static Chanson askNewChanson(){
 		Scanner saisieChanson = new Scanner(System.in);
 
 		System.out.println("Saisir le titre: ");
@@ -26,16 +34,16 @@ public class MenuChansons {
 		String genreStr = valuesArray[genreId - 1].getGenre();
 		
 
-		chanson newChanson = new chanson(titre, artiste, duree, 0, fichier, genreStr);
+		Chanson newChanson = new Chanson(titre, artiste, duree, 0, fichier, genreStr);
 		return newChanson;
 	
 	}
 	
-	private static void afficheChansons(chansons listeChanson){	
+	private static void afficheChansons(Chansons listeChanson){	
 		listeChanson.affiche();
 	}
 
-	private static void saveChansons(chansons listeChanson){
+	private static void saveChansons(Chansons listeChanson){
 		listeChanson.save("saveChanson.data");
 	}
 	

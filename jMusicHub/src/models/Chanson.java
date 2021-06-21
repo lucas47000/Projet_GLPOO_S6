@@ -9,11 +9,13 @@ public class Chanson extends Piste {
 	String fichier;
 	String genre;
 
+
+
 	public void affiche(){
 		System.out.println("id:"+id+" Titre:"+titre+" Artiste: "+artiste+" Duree: "+duree+" Genre: "+genre+" Fichier: "+fichier);
 	}
 
-	public chanson(String titre, String artiste, int duree, int _id, String fichier, String genre){
+	public Chanson(String titre, String artiste, int duree, int _id, String fichier, String genre){
 		this.titre = titre; 
 		this.artiste = artiste;
 		this.duree = duree;
