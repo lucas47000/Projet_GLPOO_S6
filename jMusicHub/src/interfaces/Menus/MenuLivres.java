@@ -3,34 +3,37 @@ import java.util.Scanner;
 
 import interfaces.Console.BasConsole;
 import interfaces.Console.EnTeteConsole;
-import logic.ChansonLogic;
+import logic.LivreLogic;
+import models.Livre;
+import models.Livres;
+import models.categories;
+import models.langues;
 
-
-public class MenuChansons {
+public class MenuLivres {
 	
 	public static void main(String[] Args){
-		MenuChansons.menuChansons();
+		MenuLivres.menuLivres();
 	}
 
-	public static void menuChansons() {
-		EnTeteConsole.enTeteMenu("MENU CHANSONS");
+	public static void menuLivres() {
+		EnTeteConsole.enTeteMenu("MENU LIVRES AUDIOS");
 		EnTeteConsole.question(false, "Que souhaitez-vous faire ?\n\n");
 		
-		System.out.print (	"	- Ajouter une nouvelle chanson ? |Entrez 'a'|\n\n"+
-							"	- Lire une nouvelle chanson ?    |Entrez 'l'|\n\n");
+		System.out.print (	"	- Ajouter un nouveau livre audio ?        |Entrez 'a'|\n\n"+
+							"	- Afficher les livres audio par auteur ?  |Entrez 'l'|\n\n");
 		BasConsole.afficheRetourMenuPrincipal();
 		BasConsole.demanderReponse();
-		switchMenuChansons();
+		switchMenuLivres();
 	}
 
-	public static void switchMenuChansons() {
+	public static void switchMenuLivres() {
 		String reponse = new String();
 		Scanner sc = new Scanner(System.in);
 		reponse = sc.nextLine();
 		
 		switch(reponse) {
 		  case "a":
-			  ChansonLogic.askNewChanson();
+			  LivreLogic.askNewLivre();
 			  MenuPrincipal.menuPrincipal();
 			  break;
 		  case "n":
@@ -41,7 +44,7 @@ public class MenuChansons {
 			  break;
 		  default:
 			  System.out.print ("Saisie incorrecte, veuillez réessayer : ");
-			  MenuChansons.menuChansons();
+			  MenuLivres.menuLivres();
 		}		
 	}
 	

@@ -43,7 +43,7 @@ public class MenuPlaylists {
 			  break;
 		  default:
 			  System.out.print ("Saisie incorrecte, veuillez réessayer : ");
-			  MenuLivresAudios.menuLivresAudios();
+			  MenuPlaylists.menuPlaylists();
 		}		
 	}
 }

@@ -1,5 +1,7 @@
 package interfaces.Menus;
+import logic.ChansonLogic;
 import java.util.Scanner;
+import logic.LivreLogic;
 
 import interfaces.Console.*;
 
@@ -27,11 +29,10 @@ public class MenuPrincipal {
 		
 		switch(reponse) {
 		  case "c":
-			  //ICI : appel methode
-			  MenuChansons.askNewChanson();
+			  MenuChansons.menuChansons();
 			  break;
 		  case "l":
-			  MenuLivresAudios.askNewLivre();
+			  MenuLivres.menuLivres();
 			  break;
 		  case "a":
 			  MenuAlbums.menuAlbums();
