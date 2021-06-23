@@ -1,5 +1,6 @@
 package logic;
 
+import java.util.List;
 import java.util.Scanner;
 
 import models.Chanson;
@@ -36,11 +37,26 @@ public class ChansonLogic {
 	
 	}
 	
-	private static void afficheChansons(Chansons listeChanson){	
-		listeChanson.affiche();
-	}
 
-	private static void saveChansons(Chansons listeChanson){
+	public static void saveChansons(Chansons listeChanson){
 		listeChanson.save("saveChanson.data");
 	}
+	
+	//====================BLOC AFFICHAGE==================================
+	
+	public static void afficheChansons(List<Chanson> listChansons){	
+		affiche();
+	}
+	
+	public static void affiche(){			//affiche la liste des chansons
+		System.out.println("affiche");
+		System.out.println(Chansons.listChansons.size());
+
+		for(int i = 0; i < Chansons.listChansons.size(); i++){
+			Chanson _chanson = Chansons.listChansons.get(i);
+			_chanson.affiche();
+		}
+	}
+
+
 }

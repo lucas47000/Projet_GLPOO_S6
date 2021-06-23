@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Chansons {
-	List<Chanson> listChansons = new ArrayList<>();
+	public static List<Chanson> listChansons = new ArrayList<>();
 	
 	public void add(Chanson _chanson){  //pour rajouter une chanson dans la liste
 		int id = listChansons.size() + 1;

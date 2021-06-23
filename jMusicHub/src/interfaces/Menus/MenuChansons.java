@@ -4,6 +4,7 @@ import java.util.Scanner;
 import interfaces.Console.BasConsole;
 import interfaces.Console.EnTeteConsole;
 import logic.ChansonLogic;
+import models.Chansons;
 
 
 public class MenuChansons {
@@ -17,7 +18,7 @@ public class MenuChansons {
 		EnTeteConsole.question(false, "Que souhaitez-vous faire ?\n\n");
 		
 		System.out.print (	"	- Ajouter une nouvelle chanson ? |Entrez 'a'|\n\n"+
-							"	- Lire une nouvelle chanson ?    |Entrez 'l'|\n\n");
+							"	- Lire une chanson ?             |Entrez 'l'|\n\n");
 		BasConsole.afficheRetourMenuPrincipal();
 		BasConsole.demanderReponse();
 		switchMenuChansons();
@@ -33,8 +34,10 @@ public class MenuChansons {
 			  ChansonLogic.askNewChanson();
 			  MenuPrincipal.menuPrincipal();
 			  break;
-		  case "n":
-			  //menuAjoutAlbum();
+		  case "l":
+			  System.out.println("liste des chansons :");
+			  ChansonLogic.afficheChansons(Chansons.listChansons);
+			  switchRetourMenuChansons();
 			  break;
 		  case "p":
 			  MenuPrincipal.menuPrincipal();
@@ -44,5 +47,20 @@ public class MenuChansons {
 			  MenuChansons.menuChansons();
 		}		
 	}
+	public static void switchRetourMenuChansons() {
+		  BasConsole.afficheRetourMenuPrecedent("chanson");
+		  String reponse = new String();
+		  Scanner sc = new Scanner(System.in);
+		  reponse = sc.nextLine();
+		  
+		  switch(reponse) {
+		  case "r":
+			  MenuChansons.menuChansons();
+			  break;
+		  default:
+			  System.out.print ("Saisie incorrecte, veuillez réessayer : ");
+			  BasConsole.afficheRetourMenuPrecedent("chanson");
+		  }
+	}
+}		
 	
-}
