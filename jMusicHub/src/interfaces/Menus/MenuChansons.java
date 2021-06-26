@@ -4,7 +4,7 @@ import java.util.Scanner;
 import interfaces.Console.BasConsole;
 import interfaces.Console.EnTeteConsole;
 import logic.ChansonLogic;
-import models.Chansons;
+import models.ChansonsList;
 
 
 public class MenuChansons {
@@ -36,7 +36,7 @@ public class MenuChansons {
 			  break;
 		  case "l":
 			  System.out.println("liste des chansons :");
-			  ChansonLogic.afficheChansons(Chansons.listChansons);
+			  ChansonLogic.afficheChansons(ChansonsList.listChansons);
 			  switchRetourMenuChansons();
 			  break;
 		  case "p":

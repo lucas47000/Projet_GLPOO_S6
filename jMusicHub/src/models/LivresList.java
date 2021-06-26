@@ -9,7 +9,7 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.Collections;
 
-public class Livres{
+public class LivresList{
 
 	List<Livre> listLivres = new ArrayList<>();
 

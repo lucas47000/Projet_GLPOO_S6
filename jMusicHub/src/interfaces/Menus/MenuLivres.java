@@ -5,7 +5,7 @@ import interfaces.Console.BasConsole;
 import interfaces.Console.EnTeteConsole;
 import logic.LivreLogic;
 import models.Livre;
-import models.Livres;
+import models.LivresList;
 import models.categories;
 import models.langues;
 

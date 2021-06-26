@@ -2,7 +2,7 @@ package logic;
 import java.util.Scanner;
 
 import models.Livre;
-import models.Livres;
+import models.LivresList;
 import models.categories;
 import models.langues;
 
@@ -43,11 +43,11 @@ public class LivreLogic {
 		return newLivre;
 	}
 
-	private static void afficheLivres(Livres listeLivre){
+	private static void afficheLivres(LivresList listeLivre){
 		listeLivre.affiche();
 	}
 
-	private static void saveLivres(Livres listeLivre){
+	private static void saveLivres(LivresList listeLivre){
 		listeLivre.save("saveLivre.data");
 	}
 }

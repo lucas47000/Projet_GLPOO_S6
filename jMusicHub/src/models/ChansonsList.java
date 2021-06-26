@@ -7,7 +7,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Chansons {
+public class ChansonsList {
 	public static List<Chanson> listChansons = new ArrayList<>();
 	
 	public void add(Chanson _chanson){  //pour rajouter une chanson dans la liste

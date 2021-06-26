@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import models.Chanson;
-import models.Chansons;
+import models.ChansonsList;
 import models.genres;
 
 public class ChansonLogic {
@@ -38,7 +38,7 @@ public class ChansonLogic {
 	}
 	
 
-	public static void saveChansons(Chansons listeChanson){
+	public static void saveChansons(ChansonsList listeChanson){
 		listeChanson.save("saveChanson.data");
 	}
 	
@@ -50,10 +50,10 @@ public class ChansonLogic {
 	
 	public static void affiche(){			//affiche la liste des chansons
 		System.out.println("affiche");
-		System.out.println(Chansons.listChansons.size());
+		System.out.println(ChansonsList.listChansons.size());
 
-		for(int i = 0; i < Chansons.listChansons.size(); i++){
-			Chanson _chanson = Chansons.listChansons.get(i);
+		for(int i = 0; i < ChansonsList.listChansons.size(); i++){
+			Chanson _chanson = ChansonsList.listChansons.get(i);
 			_chanson.affiche();
 		}
 	}
