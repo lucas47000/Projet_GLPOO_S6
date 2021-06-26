@@ -41,6 +41,7 @@ public class MenuLivres {
 		switch(reponse) {
 		  case "a":
 			  LivreLogic.askNewLivre();
+			  LivreLogic.saveLivres(livresList);
 			  MenuPrincipal.menuPrincipal();
 			  break;
 		  case "l":

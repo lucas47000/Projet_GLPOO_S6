@@ -20,7 +20,7 @@ public class MenuPrincipal {
 	
 	public static void menuPrincipal() {
 		EnTeteConsole.enTeteMenu("   |jMucicHub|");
-		EnTeteConsole.question(false, "1 Bienvenue sur jMusicHub, que souhaitez-vous faire ?\n\n");
+		EnTeteConsole.question(false, "Bienvenue sur jMusicHub, que souhaitez-vous faire ?\n\n");
 		System.out.print (	"	- Ajouter une nouvelle chanson ?       |Entrez 'c'|\n\n"+
 							"	- Afficher le menu des livres audios ? |Entrez 'l'|\n\n"+
 							"	- Afficher le menu des albums ?        |Entrez 'a'|\n\n"+
