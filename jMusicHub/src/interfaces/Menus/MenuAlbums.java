@@ -11,6 +11,7 @@ public class MenuAlbums { //classe regroupants le menu et les sous menus relatif
 
 //*****************************Menu relatif à la manipulation des albums****************************
 	public static void menuAlbums() {
+		ClearConsole.clear();
 
 		EnTeteConsole.enTeteMenu("  MENU ALBUMS");
 		

@@ -2,6 +2,7 @@ package interfaces.Menus;
 import java.util.Scanner;
 
 import interfaces.Console.BasConsole;
+import interfaces.Console.ClearConsole;
 import interfaces.Console.EnTeteConsole;
 import logic.ChansonLogic;
 import models.ChansonsList;
@@ -14,6 +15,7 @@ public class MenuChansons {
 	}
 
 	public static void menuChansons() {
+		ClearConsole.clear();
 		EnTeteConsole.enTeteMenu("MENU CHANSONS");
 		EnTeteConsole.question(false, "Que souhaitez-vous faire ?\n\n");
 		

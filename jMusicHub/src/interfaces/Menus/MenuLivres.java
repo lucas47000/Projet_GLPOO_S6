@@ -2,6 +2,7 @@ package interfaces.Menus;
 import java.util.Scanner;
 
 import interfaces.Console.BasConsole;
+import interfaces.Console.ClearConsole;
 import interfaces.Console.EnTeteConsole;
 import logic.LivreLogic;
 import main.MainApp;
@@ -19,6 +20,8 @@ public class MenuLivres {
 	}
 	
 	public static void menuLivres() {
+		ClearConsole.clear();
+
 		EnTeteConsole.enTeteMenu("MENU LIVRES AUDIOS");
 		EnTeteConsole.question(false, "Que souhaitez-vous faire ?\n\n");
 		
@@ -47,7 +50,7 @@ public class MenuLivres {
 		  case "l":
 			  System.out.println("liste des livres audio :");
 			  LivreLogic.afficheLivres(livresList);
-			  
+			  switchRetourMenuLivres();
 			  break;
 		  case "p":
 			  MenuPrincipal.menuPrincipal();
@@ -56,6 +59,22 @@ public class MenuLivres {
 			  System.out.print ("Saisie incorrecte, veuillez réessayer : ");
 			  MenuLivres.menuLivres();
 		}		
+	}
+	
+	public static void switchRetourMenuLivres() {
+		  BasConsole.afficheRetourMenuPrecedent("des livres audios");
+		  String reponse = new String();
+		  Scanner sc = new Scanner(System.in);
+		  reponse = sc.nextLine();
+		  
+		  switch(reponse) {
+		  case "r":
+			  MenuLivres.menuLivres();
+			  break;
+		  default:
+			  System.out.print ("Saisie incorrecte, veuillez réessayer : \n\n");
+			  switchRetourMenuLivres();
+		  }
 	}
 	
 }
