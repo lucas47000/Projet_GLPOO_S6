@@ -58,7 +58,6 @@ public class MenuAlbums { //classe regroupants le menu et les sous menus relatif
 		EnTeteConsole.question(true, "Entrez ici le titre de l'album ('r' pour revenir au menu précédent) : \n");
 		switchChansonsAlbum();
 	}
-	
 	public static void switchChansonsAlbum() {
 		String reponse = new String();
 		Scanner sc = new Scanner(System.in);
