@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>esiea.softwareengineering</groupId>
+  <groupId>issou</groupId>
   <artifactId>JMusicHub</artifactId>
   <version>1.0.0</version>
   <build>
+    <sourceDirectory>src</sourceDirectory>
     <plugins>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>
@@ -18,7 +19,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>src.main.MainApp</mainClass>
+                  <mainClass>main.MainApp</mainClass>
                 </transformer>
               </transformers>
             </configuration>
@@ -59,7 +60,7 @@
     </plugins>
   </build>
   <properties>
-    <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
   </properties>
 </project>
