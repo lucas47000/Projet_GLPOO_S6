@@ -1,4 +1,5 @@
 package logic;
+
 import java.util.Scanner;
 
 import models.Livre;
@@ -24,17 +25,19 @@ public class LivreLogic {
 		String fichier = saisieLivre.nextLine();	
 		
 		System.out.println("choisir la categorie (saisir le numero)");
-		categories[] valuesArray = categories.values();
-		for(int i = 0; i < valuesArray.length; i++){
-			System.out.println(valuesArray[i]);
-		}
+		categories[] valuesArray3 = categories.values();
+		
+		for(int i = 0; i < valuesArray3.length; i++){
+			System.out.println(valuesArray3[i].toString());
+		}	
+		
 		int categorieId = new Integer(saisieLivre.nextLine());
-		String categorieStr = valuesArray[categorieId - 1].getCategorie();
+		String categorieStr = valuesArray3[categorieId - 1].getCategorie();
 
 		System.out.println("choisir la langue (saisir le numero)");
 		langues[] valuesArray2 = langues.values();	
 		for(int i = 0; i < valuesArray2.length; i++){
-			System.out.println(valuesArray2[i]);
+			System.out.println(valuesArray2[i].toString());
 		}
 		int langueId = new Integer(saisieLivre.nextLine());
 		String langueStr = valuesArray2[langueId - 1].getLangue();
@@ -43,11 +46,15 @@ public class LivreLogic {
 		return newLivre;
 	}
 
-	private static void afficheLivres(LivresList listeLivre){
+	public static void afficheLivres(LivresList listeLivre){
 		listeLivre.affiche();
 	}
 
-	private static void saveLivres(LivresList listeLivre){
-		listeLivre.save("saveLivre.data");
+	public static void saveLivres(LivresList listeLivre){
+		listeLivre.save("src\\dao\\data\\saveLivre.data");
+	}
+	
+	public static void readLivres(LivresList listeLivre){
+		listeLivre.read("src\\dao\\data\\saveLivre.data");
 	}
 }

@@ -1,6 +1,4 @@
 interfaces\Menus\MenuChansons.class
-models\Livres.class
-models\Chansons.class
 interfaces\Menus\MenuAlbums.class
 main\MainApp.class
 models\Album.class

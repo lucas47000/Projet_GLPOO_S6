@@ -4,17 +4,20 @@ import java.util.Scanner;
 import interfaces.Console.BasConsole;
 import interfaces.Console.EnTeteConsole;
 import logic.LivreLogic;
+import main.MainApp;
 import models.Livre;
 import models.LivresList;
 import models.categories;
 import models.langues;
 
+
 public class MenuLivres {
+	static LivresList livresList;
 	
 	public static void main(String[] Args){
 		MenuLivres.menuLivres();
 	}
-
+	
 	public static void menuLivres() {
 		EnTeteConsole.enTeteMenu("MENU LIVRES AUDIOS");
 		EnTeteConsole.question(false, "Que souhaitez-vous faire ?\n\n");
@@ -24,6 +27,10 @@ public class MenuLivres {
 		BasConsole.afficheRetourMenuPrincipal();
 		BasConsole.demanderReponse();
 		switchMenuLivres();
+	}
+	
+	public void setLivresList(LivresList _livresList) {
+		livresList = _livresList;
 	}
 
 	public static void switchMenuLivres() {
@@ -36,8 +43,10 @@ public class MenuLivres {
 			  LivreLogic.askNewLivre();
 			  MenuPrincipal.menuPrincipal();
 			  break;
-		  case "n":
-			  //menuAjoutAlbum();
+		  case "l":
+			  System.out.println("liste des livres audio :");
+			  LivreLogic.afficheLivres(livresList);
+			  
 			  break;
 		  case "p":
 			  MenuPrincipal.menuPrincipal();

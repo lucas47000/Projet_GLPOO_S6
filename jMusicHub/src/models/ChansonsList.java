@@ -4,10 +4,12 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import models.Chanson;
 
-public class ChansonsList {
+public class ChansonsList implements Serializable{
 	public static List<Chanson> listChansons = new ArrayList<>();
 	
 	public void add(Chanson _chanson){  //pour rajouter une chanson dans la liste

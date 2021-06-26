@@ -9,7 +9,7 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.Collections;
 
-public class LivresList{
+public class LivresList implements Serializable{
 
 	List<Livre> listLivres = new ArrayList<>();
 

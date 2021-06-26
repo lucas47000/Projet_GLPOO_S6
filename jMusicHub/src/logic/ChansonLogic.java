@@ -2,7 +2,7 @@ package logic;
 
 import java.util.List;
 import java.util.Scanner;
-
+import java.util.ArrayList;
 import models.Chanson;
 import models.ChansonsList;
 import models.genres;
@@ -26,7 +26,7 @@ public class ChansonLogic {
 		System.out.println("choisir le genre (saisir le numero): ");
 		genres[] valuesArray = genres.values();
 		for(int i = 0; i < valuesArray.length; i++){
-			System.out.println(valuesArray[i]);
+			System.out.println(valuesArray[i].toString());
 		}
 		int genreId = new Integer(saisieChanson.nextLine());
 		String genreStr = valuesArray[genreId - 1].getGenre();
