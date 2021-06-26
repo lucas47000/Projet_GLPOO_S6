@@ -19,8 +19,8 @@ public class MainApp {
 		
 		//albums listeAlbum = new albums();
 	//	playlists listePlaylist = new playlists();
-		chansonsList.read("src\\dao\\data\\saveChanson.data");
-		livresList.read("src\\dao\\data\\saveLivre.data");
+		chansonsList.read("dao\\data\\saveChanson.data");
+		livresList.read("dao\\data\\saveLivre.data");
 
 		
 		MenuPrincipal.menuPrincipal();

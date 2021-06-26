@@ -51,10 +51,10 @@ public class LivreLogic {
 	}
 
 	public static void saveLivres(LivresList listeLivre){
-		listeLivre.save("src\\dao\\data\\saveLivre.data");
+		listeLivre.save("dao\\data\\saveLivre.data");
 	}
 	
 	public static void readLivres(LivresList listeLivre){
-		listeLivre.read("src\\dao\\data\\saveLivre.data");
+		listeLivre.read("dao\\data\\saveLivre.data");
 	}
 }
