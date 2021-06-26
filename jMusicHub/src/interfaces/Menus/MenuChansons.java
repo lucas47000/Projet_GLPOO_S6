@@ -32,7 +32,7 @@ public class MenuChansons {
 		switch(reponse) {
 		  case "a":
 			  ChansonLogic.askNewChanson();
-			  MenuPrincipal.menuPrincipal();
+			  MenuChansons.menuChansons();
 			  break;
 		  case "l":
 			  System.out.println("liste des chansons :");
@@ -43,12 +43,12 @@ public class MenuChansons {
 			  MenuPrincipal.menuPrincipal();
 			  break;
 		  default:
-			  System.out.print ("Saisie incorrecte, veuillez réessayer : ");
+			  System.out.print ("Saisie incorrecte, veuillez réessayer : \n\n");
 			  MenuChansons.menuChansons();
 		}		
 	}
 	public static void switchRetourMenuChansons() {
-		  BasConsole.afficheRetourMenuPrecedent("chanson");
+		  BasConsole.afficheRetourMenuPrecedent("des chansons");
 		  String reponse = new String();
 		  Scanner sc = new Scanner(System.in);
 		  reponse = sc.nextLine();
@@ -58,8 +58,8 @@ public class MenuChansons {
 			  MenuChansons.menuChansons();
 			  break;
 		  default:
-			  System.out.print ("Saisie incorrecte, veuillez réessayer : ");
-			  BasConsole.afficheRetourMenuPrecedent("chanson");
+			  System.out.print ("Saisie incorrecte, veuillez réessayer : \n\n");
+			  switchRetourMenuChansons();
 		  }
 	}
 }		
