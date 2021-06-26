@@ -24,7 +24,8 @@ public class MenuPrincipal {
 		System.out.print (	"	- Ajouter une nouvelle chanson ?       |Entrez 'c'|\n\n"+
 							"	- Afficher le menu des livres audios ? |Entrez 'l'|\n\n"+
 							"	- Afficher le menu des albums ?        |Entrez 'a'|\n\n"+
-							"	- Afficher le menu des playlists ?     |Entrez 'p'|");
+							"	- Afficher le menu des playlists ?     |Entrez 'p'|\n\n"+
+							"	- Quitter jMusicHub                    |Entrez 'q'|\n\n");
 		BasConsole.demanderReponse();
 		switchMenuPrincipal();
 	}
@@ -45,8 +46,10 @@ public class MenuPrincipal {
 			  MenuAlbums.menuAlbums();
 			  break;
 		  case "p":
-			    MenuPlaylists.menuPlaylists();
+			  MenuPlaylists.menuPlaylists();
 			  break;
+		  case "q":
+			  System.exit(0);
 		  default:
 			  System.out.print ("Saisie incorrecte, veuillez réessayer : ");
 			  	switchMenuPrincipal();
