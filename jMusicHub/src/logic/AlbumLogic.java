@@ -49,7 +49,7 @@ public class AlbumLogic {
 		}while(lecture == false);
 
 		Album newAlbum = new Album(titre, artiste, duree, date, 0);
-		listeAlbum.save("saveAlbum.data");
+		listeAlbum.add(newAlbum);
 	
 	}
 	
