@@ -50,7 +50,7 @@ public class LivreLogic {
 		Livre newLivre = new Livre(titre, auteur, duree, 0, fichier, categorieStr, langueStr);
 		listeLivre.add(newLivre);
 		
-		saisieLivre.close();
+		//saisieLivre.close();
 	}
 
 	 //--------------------------------------------

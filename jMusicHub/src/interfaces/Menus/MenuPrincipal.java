@@ -11,9 +11,11 @@ public class MenuPrincipal {
 	static ChansonsList chansonsList;
 	
 	MenuLivres menuLivres;
+	MenuChansons menuChansons;
 	
 	public MenuPrincipal() {
 		menuLivres = new MenuLivres();
+		menuChansons = new MenuChansons();
 	}
 	
 	//Affiche le menu d'acceuil du programme :
@@ -30,17 +32,20 @@ public class MenuPrincipal {
 	}
 	
 	public void menuPrincipal() {
-		ClearConsole.clear();
+		
+		do {
+			ClearConsole.clear();
 
-		EnTeteConsole.enTeteMenu("   |jMucicHub|");
-		EnTeteConsole.question(false, "Bienvenue sur jMusicHub, que souhaitez-vous faire ?\n\n");
-		System.out.print (	"	- Ajouter une nouvelle chanson ?       |Entrez 'c'|\n\n"+
-							"	- Afficher le menu des livres audios ? |Entrez 'l'|\n\n"+
-							"	- Afficher le menu des albums ?        |Entrez 'a'|\n\n"+
-							"	- Afficher le menu des playlists ?     |Entrez 'p'|\n\n"+
-							"	- Quitter jMusicHub                    |Entrez 'q'|\n\n");
+			EnTeteConsole.enTeteMenu("   |jMucicHub|");
+			EnTeteConsole.question(false, "Bienvenue sur jMusicHub, que souhaitez-vous faire ?\n\n");
+			System.out.print (	"	- Ajouter une nouvelle chanson ?       |Entrez 'c'|\n\n"+
+								"	- Afficher le menu des livres audios ? |Entrez 'l'|\n\n"+
+								"	- Afficher le menu des albums ?        |Entrez 'a'|\n\n"+
+								"	- Afficher le menu des playlists ?     |Entrez 'p'|\n\n"+
+								"	- Quitter jMusicHub                    |Entrez 'q'|\n\n");
 		BasConsole.demanderReponse();
-		this.switchMenuPrincipal();
+			this.switchMenuPrincipal();
+		}while(true);
 	}
 	
 	public void switchMenuPrincipal() {
@@ -50,7 +55,7 @@ public class MenuPrincipal {
 		
 		switch(reponse) {
 		  case "c":
-			  MenuChansons.menuChansons();
+			  menuChansons.menuChansons();
 			  this.menuPrincipal();
 			  break;
 		  case "l":
@@ -69,7 +74,7 @@ public class MenuPrincipal {
 			  System.exit(0);
 		  default:
 			  System.out.print ("Saisie incorrecte, veuillez réessayer : ");
-			  	switchMenuPrincipal();
+			
 		}
 	}
 }

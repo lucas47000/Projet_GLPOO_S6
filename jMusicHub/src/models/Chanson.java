@@ -1,6 +1,8 @@
 package models;
 
-public class Chanson extends Piste {
+import java.io.Serializable;
+
+public class Chanson implements Serializable {
 
 	String titre;
 	String artiste;

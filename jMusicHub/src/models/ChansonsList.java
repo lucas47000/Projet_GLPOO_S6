@@ -71,7 +71,7 @@ public class ChansonsList implements Serializable{
 		}
 	}
 
-	public void affiche(int j){			//affiche la liste des chansons
+	public void affiche(int j){			//affiche la chanson avec id
 		System.out.println("affiche");
 		System.out.println(listChansons.size());
 

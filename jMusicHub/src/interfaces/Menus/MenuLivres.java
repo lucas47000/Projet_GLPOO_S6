@@ -13,7 +13,6 @@ import models.langues;
 
 
 public class MenuLivres {
-	//static LivresList livresList;
 	LivreLogic livreLogic;
 	LivresList livresList;
 	
@@ -22,13 +21,12 @@ public class MenuLivres {
 		livreLogic.readLivres();
 	}
 	
-	//blic static void main(String[] Args){
+	//public static void main(String[] Args){
 	//enuLivres.menuLivres();
 	//
 	
 	public void menuLivres() {
 		ClearConsole.clear();
-
 		EnTeteConsole.enTeteMenu("MENU LIVRES AUDIOS");
 		EnTeteConsole.question(false, "Que souhaitez-vous faire ?\n\n");
 		

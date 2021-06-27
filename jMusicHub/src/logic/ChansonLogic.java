@@ -9,7 +9,6 @@ import models.LivresList;
 import models.genres;
 
 public class ChansonLogic {
-	
 	ChansonsList listeChanson;
 	
 	public ChansonLogic(){
@@ -42,7 +41,8 @@ public class ChansonLogic {
 
 		Chanson newChanson = new Chanson(titre, artiste, duree, 0, fichier, genreStr);
 		listeChanson.add(newChanson);
-	
+		
+		//saisieChanson.close();
 	}
 	
 
