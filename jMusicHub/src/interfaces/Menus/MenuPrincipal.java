@@ -7,18 +7,29 @@ import models.LivresList;
 import interfaces.Console.*;
 
 public class MenuPrincipal {
-	LivresList livresList;
+	static LivresList livresList;
+	static ChansonsList chansonsList;
+	
+	MenuLivres menuLivres;
+	
+	public MenuPrincipal() {
+		menuLivres = new MenuLivres();
+	}
 	
 	//Affiche le menu d'acceuil du programme :
-	public static void main(String[] Args){
-		MenuPrincipal.menuPrincipal();
-	}
+	//public static void main(String[] Args){
+	//	MenuPrincipal.menuPrincipal();
+	//}
 	
 	public void setLivresList(LivresList _livresList) {
 		livresList = _livresList;
 	}
 	
-	public static void menuPrincipal() {
+	public void setLivresList(ChansonsList _chansonsList) {
+		chansonsList = _chansonsList;
+	}
+	
+	public void menuPrincipal() {
 		ClearConsole.clear();
 
 		EnTeteConsole.enTeteMenu("   |jMucicHub|");
@@ -29,10 +40,10 @@ public class MenuPrincipal {
 							"	- Afficher le menu des playlists ?     |Entrez 'p'|\n\n"+
 							"	- Quitter jMusicHub                    |Entrez 'q'|\n\n");
 		BasConsole.demanderReponse();
-		switchMenuPrincipal();
+		this.switchMenuPrincipal();
 	}
 	
-	public static void switchMenuPrincipal() {
+	public void switchMenuPrincipal() {
 		String reponse = new String();
 		Scanner sc = new Scanner(System.in);
 		reponse = sc.nextLine();
@@ -40,15 +51,19 @@ public class MenuPrincipal {
 		switch(reponse) {
 		  case "c":
 			  MenuChansons.menuChansons();
+			  this.menuPrincipal();
 			  break;
 		  case "l":
-			  MenuLivres.menuLivres();
+			  menuLivres.menuLivres();
+			  this.menuPrincipal();
 			  break;
 		  case "a":
 			  MenuAlbums.menuAlbums();
+			  this.menuPrincipal();
 			  break;
 		  case "p":
 			  MenuPlaylists.menuPlaylists();
+			  this.menuPrincipal();
 			  break;
 		  case "q":
 			  System.exit(0);

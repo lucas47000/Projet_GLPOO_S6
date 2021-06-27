@@ -8,8 +8,13 @@ import models.categories;
 import models.langues;
 
 public class LivreLogic {
+	LivresList listeLivre;
 	
-	 public static Livre askNewLivre(){
+	public LivreLogic(){
+	    listeLivre = new LivresList();
+	}
+	
+	 public void askNewLivre(){
 		Scanner saisieLivre = new Scanner(System.in);
 
 		System.out.println("saisir le titre");
@@ -43,18 +48,36 @@ public class LivreLogic {
 		String langueStr = valuesArray2[langueId - 1].getLangue();
 
 		Livre newLivre = new Livre(titre, auteur, duree, 0, fichier, categorieStr, langueStr);
-		return newLivre;
+		listeLivre.add(newLivre);
+		
+		saisieLivre.close();
 	}
 
-	public static void afficheLivres(LivresList listeLivre){
+	 //--------------------------------------------
+	public void afficheLivres(){
+			listeLivre.affiche();
+	}
+
+	public void saveLivres(){
+			listeLivre.save("src\\dao\\data\\saveLivre.data");
+	}
+		
+	public void readLivres(){
+			listeLivre.read("src\\dao\\data\\saveLivre.data");
+	}
+	 
+	//--------------------------------------------
+	/*
+	public void afficheLivres(LivresList listeLivre){
 		listeLivre.affiche();
 	}
 
-	public static void saveLivres(LivresList listeLivre){
-		listeLivre.save("dao\\data\\saveLivre.data");
+	public void saveLivres(LivresList listeLivre){
+		listeLivre.save("src\\dao\\data\\saveLivre.data");
 	}
 	
-	public static void readLivres(LivresList listeLivre){
-		listeLivre.read("dao\\data\\saveLivre.data");
+	public void readLivres(LivresList listeLivre){
+		listeLivre.read("src\\dao\\data\\saveLivre.data");
 	}
+	*/
 }

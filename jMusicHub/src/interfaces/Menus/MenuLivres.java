@@ -13,13 +13,20 @@ import models.langues;
 
 
 public class MenuLivres {
-	static LivresList livresList;
+	//static LivresList livresList;
+	LivreLogic livreLogic;
+	LivresList livresList;
 	
-	public static void main(String[] Args){
-		MenuLivres.menuLivres();
+	MenuLivres(){
+		livreLogic = new LivreLogic();
+		livreLogic.readLivres();
 	}
 	
-	public static void menuLivres() {
+	//blic static void main(String[] Args){
+	//enuLivres.menuLivres();
+	//
+	
+	public void menuLivres() {
 		ClearConsole.clear();
 
 		EnTeteConsole.enTeteMenu("MENU LIVRES AUDIOS");
@@ -29,39 +36,39 @@ public class MenuLivres {
 							"	- Afficher les livres audio par auteur ?  |Entrez 'l'|\n\n");
 		BasConsole.afficheRetourMenuPrincipal();
 		BasConsole.demanderReponse();
-		switchMenuLivres();
+		this.switchMenuLivres();
 	}
 	
 	public void setLivresList(LivresList _livresList) {
 		livresList = _livresList;
 	}
 
-	public static void switchMenuLivres() {
+	public void switchMenuLivres() {
 		String reponse = new String();
 		Scanner sc = new Scanner(System.in);
 		reponse = sc.nextLine();
 		
 		switch(reponse) {
 		  case "a":
-			  LivreLogic.askNewLivre();
-			  LivreLogic.saveLivres(livresList);
-			  MenuPrincipal.menuPrincipal();
+			  livreLogic.askNewLivre();
+			  livreLogic.saveLivres();
+			  //MenuPrincipal.menuPrincipal();
 			  break;
 		  case "l":
 			  System.out.println("liste des livres audio :");
-			  LivreLogic.afficheLivres(livresList);
+			  livreLogic.afficheLivres();
 			  switchRetourMenuLivres();
 			  break;
 		  case "p":
-			  MenuPrincipal.menuPrincipal();
+			  //MenuPrincipal.menuPrincipal();
 			  break;
 		  default:
 			  System.out.print ("Saisie incorrecte, veuillez réessayer : ");
-			  MenuLivres.menuLivres();
+			  this.menuLivres();
 		}		
 	}
 	
-	public static void switchRetourMenuLivres() {
+	public void switchRetourMenuLivres() {
 		  BasConsole.afficheRetourMenuPrecedent("des livres audios");
 		  String reponse = new String();
 		  Scanner sc = new Scanner(System.in);
@@ -69,7 +76,7 @@ public class MenuLivres {
 		  
 		  switch(reponse) {
 		  case "r":
-			  MenuLivres.menuLivres();
+			  this.menuLivres();
 			  break;
 		  default:
 			  System.out.print ("Saisie incorrecte, veuillez réessayer : \n\n");

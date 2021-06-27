@@ -5,10 +5,18 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import models.Chanson;
 import models.ChansonsList;
+import models.LivresList;
 import models.genres;
 
 public class ChansonLogic {
-	public static Chanson askNewChanson(){
+	
+	ChansonsList listeChanson;
+	
+	public ChansonLogic(){
+		listeChanson = new ChansonsList();
+	}
+	
+	public void askNewChanson(){
 		Scanner saisieChanson = new Scanner(System.in);
 
 		System.out.println("Saisir le titre: ");
@@ -33,22 +41,26 @@ public class ChansonLogic {
 		
 
 		Chanson newChanson = new Chanson(titre, artiste, duree, 0, fichier, genreStr);
-		return newChanson;
+		listeChanson.add(newChanson);
 	
 	}
 	
 
-	public static void saveChansons(ChansonsList listeChanson){
-		listeChanson.save("saveChanson.data");
+	public void saveChansons(){
+		listeChanson.save("src\\dao\\data\\saveChanson.data");
+	}
+	
+	public void readChansons(){
+		listeChanson.read("src\\dao\\data\\saveChanson.data");
 	}
 	
 	//====================BLOC AFFICHAGE==================================
 	
-	public static void afficheChansons(List<Chanson> listChansons){	
+	public void afficheChansons(List<Chanson> listChansons){	
 		affiche();
 	}
 	
-	public static void affiche(){			//affiche la liste des chansons
+	public void affiche(){			//affiche la liste des chansons
 		System.out.println("affiche");
 		System.out.println(ChansonsList.listChansons.size());
 

@@ -6,9 +6,11 @@ import interfaces.Console.ClearConsole;
 import interfaces.Console.EnTeteConsole;
 import logic.ChansonLogic;
 import models.ChansonsList;
+import models.LivresList;
 
 
 public class MenuChansons {
+	ChansonsList chansonsList;
 	
 	public static void main(String[] Args){
 		MenuChansons.menuChansons();
@@ -24,6 +26,10 @@ public class MenuChansons {
 		BasConsole.afficheRetourMenuPrincipal();
 		BasConsole.demanderReponse();
 		switchMenuChansons();
+	}
+	
+	public void setLivresList(ChansonsList _chansonsList) {
+		chansonsList = _chansonsList;
 	}
 
 	public static void switchMenuChansons() {
@@ -42,7 +48,6 @@ public class MenuChansons {
 			  switchRetourMenuChansons();
 			  break;
 		  case "p":
-			  MenuPrincipal.menuPrincipal();
 			  break;
 		  default:
 			  System.out.print ("Saisie incorrecte, veuillez réessayer : \n\n");

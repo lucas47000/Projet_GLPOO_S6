@@ -14,16 +14,18 @@ public class MainApp {
 	
 	public static void main(String[] args) {
 		
-		ChansonsList chansonsList = new ChansonsList();
-		LivresList livresList = new LivresList();
+		//ChansonsList chansonsList = new ChansonsList();
+		//LivresList livresList = new LivresList();
+		MenuPrincipal  menuPrincipal = new MenuPrincipal();
 		
 		//albums listeAlbum = new albums();
 	//	playlists listePlaylist = new playlists();
-		chansonsList.read("dao\\data\\saveChanson.data");
-		livresList.read("dao\\data\\saveLivre.data");
+		//chansonsList.read("src\\dao\\data\\saveChanson.data");
+		//livresList.read("src\\dao\\data\\saveLivre.data");
 
+		//menuPrincipal.setLivresList(livresList);
+		menuPrincipal.menuPrincipal();
 		
-		MenuPrincipal.menuPrincipal();
 		
 	}
 

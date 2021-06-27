@@ -7,6 +7,8 @@ interfaces\Console\ClearConsole.class
 models\Artiste.class
 models\LivreAudio.class
 interfaces\Menus\MenuPlaylists.class
+models\LivresList.class
+models\ChansonsList.class
 interfaces\Menus\MenuLivres.class
 models\Livre.class
 interfaces\Console\BasConsole.class
