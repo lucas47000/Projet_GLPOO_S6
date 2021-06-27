@@ -1,12 +1,16 @@
 package logic;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.Scanner;
 
-import models.*
+import models.Album;
+import models.AlbumsList;
+import models.ChansonsList;
+
 
 public class AlbumLogic {
-	private static album askNewAlbum(){
+	private static Album askNewAlbum(){
 		Scanner saisieAlbum = new Scanner(System.in);
 		boolean lecture = false;
 		String date = null;
@@ -34,7 +38,7 @@ public class AlbumLogic {
 			}
 		}while(lecture == false);
 
-		album newAlbum = new album(titre, artiste, duree, date, 0);
+		Album newAlbum = new Album(titre, artiste, duree, date, 0);
 		return newAlbum;
 	
 	}
@@ -43,13 +47,13 @@ public class AlbumLogic {
 		listeAlbum.affiche();
 	}
 
-	private static void saveAlbums(albums listeAlbum){
+	private static void saveAlbums(AlbumsList listeAlbum){
 		listeAlbum.save("saveAlbum.data");
 	}
 
 //-----------------------------------------------------------------------
-	private static void addChansonToAlbum(albums listeAlbums, chansons listeChansons){	
-		album _album = null;
+	private static void addChansonToAlbum(AlbumsList listeAlbums, ChansonsList listeChansons){	
+		Album _album = null;
 		Scanner saisie = new Scanner(System.in); 
 		afficheAlbums(listeAlbums);
 		
@@ -65,8 +69,8 @@ public class AlbumLogic {
 		_album.add(idChanson);	
 	}
 //-----------------------------------------------------------------------------
-	private static void afficheChansonAlbum(albums listeAlbums, chansons listeChansons){
-		album _album = null;
+	private static void afficheChansonAlbum(AlbumsList listeAlbums, ChansonsList listeChansons){
+		Album _album = null;
 		Scanner saisie = new Scanner(System.in); 
 		afficheAlbums(listeAlbums);
 		

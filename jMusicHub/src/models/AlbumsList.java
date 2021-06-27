@@ -1,3 +1,5 @@
+package models;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,11 +15,11 @@ import java.util.Collections;
 //
 
 
-public class AlbumsList{
+public class AlbumsList implements Serializable{
 
-	 List<album> listAlbums = new ArrayList<>();
+	 List<Album> listAlbums = new ArrayList<>();
 
-        public void add(album _album){  //pour rajouter une chanson dans la liste
+        public void add(Album _album){  //pour rajouter une chanson dans la liste
                 int id = listAlbums.size() + 1;
                 _album.setId(id);
                 listAlbums.add( _album);
@@ -71,15 +73,15 @@ public class AlbumsList{
                 System.out.println(listAlbums.size());
 				Collections.sort(listAlbums);
                 for(int i = 0; i < listAlbums.size(); i++){
-                        album _album = listAlbums.get(i);
+                        Album _album = listAlbums.get(i);
                         _album.affiche();
                 }
 
         }
 
 	
-	public album getAlbum(int id){
-		album _album = null;
+	public Album getAlbum(int id){
+		Album _album = null;
 		for(int i=0; i<listAlbums.size() ; i++){
 			_album = listAlbums.get(i);
 			if(_album.getId() == id){

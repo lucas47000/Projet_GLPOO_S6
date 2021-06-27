@@ -5,12 +5,12 @@ import java.util.Scanner;
 
 public class MenuAlbums { //classe regroupants le menu et les sous menus relatifs à la manipulation des albums
 	
-	public static void main (String[] Args){
+	/*public static void main (String[] Args){
 		menuAlbums();
-	}
+	}*/
 
 //*****************************Menu relatif à la manipulation des albums****************************
-	public static void menuAlbums() {
+	public void menuAlbums() {
 		ClearConsole.clear();
 
 		EnTeteConsole.enTeteMenu("  MENU ALBUMS");
@@ -27,7 +27,7 @@ public class MenuAlbums { //classe regroupants le menu et les sous menus relatif
 	
 
 
-	public static void switchMenuAlbums() {
+	public void switchMenuAlbums() {
 		String reponse = new String();
 		Scanner sc = new Scanner(System.in);
 		reponse = sc.nextLine();
@@ -46,20 +46,20 @@ public class MenuAlbums { //classe regroupants le menu et les sous menus relatif
 			  menuAjoutChansonAlbum();
 			  break;
 		  case "p":
-			  MenuPrincipal.menuPrincipal();
+			  //MenuPrincipal.menuPrincipal();
 			  break;
 		  default:
 			  System.out.print ("Saisie incorrecte, veuillez réessayer : ");
-			  MenuAlbums.menuAlbums();
+			  this.menuAlbums();
 		}		
 	}
 	
 //============================Afficher les chansons d'un album=================================================
-	public static void menuChansonsAlbum(){
+	public void menuChansonsAlbum(){
 		EnTeteConsole.question(true, "Entrez ici le titre de l'album ('r' pour revenir au menu précédent) : \n");
 		switchChansonsAlbum();
 	}
-	public static void switchChansonsAlbum() {
+	public void switchChansonsAlbum() {
 		String reponse = new String();
 		Scanner sc = new Scanner(System.in);
 		reponse = sc.nextLine();
@@ -68,14 +68,14 @@ public class MenuAlbums { //classe regroupants le menu et les sous menus relatif
 			  menuAlbums();
 			  break;
 		  case "p":
-			  MenuPrincipal.menuPrincipal();
+			  //MenuPrincipal.menuPrincipal();
 			  break;
 		  default:
 			  if (reponse.length() != 0){
 				  //recupChansonsAlbum(reponse)
 				  System.out.print("ICI METHODE POUR AFFICHER LES CHANSONS DE L'ALBUM SELECTIONNE");
 					BasConsole.workInProgress("Lister les musiques d'un album", "albums");
-					menuAlbums();
+					this.menuAlbums();
 			  }else{
 				  System.out.print ("Saisie incorrecte, veuillez réessayer : ");
 				  switchChansonsAlbum();
@@ -84,7 +84,7 @@ public class MenuAlbums { //classe regroupants le menu et les sous menus relatif
 	}
 	
 //========================Afficher la liste des albums====================================================	
-	public static void menuListesAlbums(){
+	public void menuListesAlbums(){
 		
 		EnTeteConsole.question(true, "Que voulez vous afficher ?\n\n");
 		System.out.print (	"	- La liste de tous les albums existants ? |Entrez 't'|\n\n"+
@@ -95,7 +95,7 @@ public class MenuAlbums { //classe regroupants le menu et les sous menus relatif
 		switchListesAlbums();
 	}
 	
-	public static void switchListesAlbums(){
+	public void switchListesAlbums(){
 		String reponse = new String();
 		Scanner sc = new Scanner(System.in);
 		reponse = sc.nextLine();
@@ -114,10 +114,10 @@ public class MenuAlbums { //classe regroupants le menu et les sous menus relatif
 				menuAlbums();
 			  break;
 		  case "r":
-			  MenuAlbums.menuAlbums();
+			  this.menuAlbums();
 			  break;
 		  case "p":
-			  MenuPrincipal.menuPrincipal();
+			 // MenuPrincipal.menuPrincipal();
 			  break;
 		  default:
 				  System.out.print ("Saisie incorrecte, veuillez réessayer : ");
@@ -125,14 +125,14 @@ public class MenuAlbums { //classe regroupants le menu et les sous menus relatif
 		}	  
 	}
 	
-	public static void menuAjoutAlbum(){
+	public void menuAjoutAlbum(){
 		//ICI : appel methode
 		//logic.albumsLogic.ajoutAlbum
 		BasConsole.workInProgress("Ajout d'un album", "albums");
 		menuAlbums();
 	}
 
-	public static void menuAjoutChansonAlbum(){
+	public void menuAjoutChansonAlbum(){
 		//ICI : appel methode
 		//logic.albumsLogic.ajoutChansonAlbum
 		BasConsole.workInProgress("Ajout d'une musique à un album", "albums");

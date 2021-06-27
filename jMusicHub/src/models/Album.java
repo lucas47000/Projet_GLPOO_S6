@@ -1,3 +1,5 @@
+package models;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +13,7 @@ import java.io.ObjectInputStream;
 //
 //un album a un id, un titre, un artiste, une duree et une date de sortie
 
-public class album implements Serializable, Comparable<album>{
+public class Album{
 	
 	String titre;
 	String artiste;
@@ -25,7 +27,7 @@ public class album implements Serializable, Comparable<album>{
 		System.out.println("id:"+id+" titre: "+titre+" artiste: "+artiste+"durée: "+duree+"date de sortie: "+dateDeSortie);
 	}
 
-	public album(String titre, String artiste, int duree, String dateDeSortie, int _id){
+	public Album(String titre, String artiste, int duree, String dateDeSortie, int _id){
 		this.titre = titre;
 		this.artiste = artiste;
 		this.duree = duree;
@@ -56,7 +58,7 @@ public class album implements Serializable, Comparable<album>{
 		return this.id;
 	}	
 
-	public void add(chanson _chanson){
+	public void add(Chanson _chanson){
 		id = _chanson.id();
 		listChansons.add(id);
 	}
@@ -69,7 +71,7 @@ public class album implements Serializable, Comparable<album>{
 		return this.listChansons;
 	}
 
-	public int compareTo(album _album){
+	public int compareTo(Album _album){
 		int rc;
 
 		rc = this.dateDeSortie.compareTo(_album.dateDeSortie());
