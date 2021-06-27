@@ -2,11 +2,13 @@ package logic;
 
 import java.util.List;
 import java.util.Scanner;
+
+import models.enumerations.*;
+
 import java.util.ArrayList;
 import models.Chanson;
 import models.ChansonsList;
 import models.LivresList;
-import models.genres;
 
 public class ChansonLogic {
 	ChansonsList listeChanson;
@@ -31,7 +33,7 @@ public class ChansonLogic {
 		String fichier = saisieChanson.nextLine();
 
 		System.out.println("choisir le genre (saisir le numero): ");
-		genres[] valuesArray = genres.values();
+		Genres[] valuesArray = Genres.values();
 		for(int i = 0; i < valuesArray.length; i++){
 			System.out.println(valuesArray[i].toString());
 		}

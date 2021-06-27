@@ -5,6 +5,7 @@ import java.util.Scanner;
 import interfaces.Console.BasConsole;
 import interfaces.Console.ClearConsole;
 import interfaces.Console.EnTeteConsole;
+import interfaces.Menus.*;
 
 public class MenuPlaylists {
 	

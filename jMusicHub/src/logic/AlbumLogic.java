@@ -1,4 +1,9 @@
 package logic;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Scanner;
+
+import models.*
 
 public class AlbumLogic {
 	private static album askNewAlbum(){
@@ -34,7 +39,7 @@ public class AlbumLogic {
 	
 	}
 	
-	private static void afficheAlbums(albums listeAlbum){	
+	private static void afficheAlbums(AlbumsList listeAlbum){	
 		listeAlbum.affiche();
 	}
 

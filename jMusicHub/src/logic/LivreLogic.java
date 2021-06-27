@@ -2,10 +2,10 @@ package logic;
 
 import java.util.Scanner;
 
+import models.enumerations.Categories;
+import models.enumerations.Langues;
 import models.Livre;
 import models.LivresList;
-import models.categories;
-import models.langues;
 
 public class LivreLogic {
 	LivresList listeLivre;
@@ -30,7 +30,7 @@ public class LivreLogic {
 		String fichier = saisieLivre.nextLine();	
 		
 		System.out.println("choisir la categorie (saisir le numero)");
-		categories[] valuesArray3 = categories.values();
+		Categories[] valuesArray3 = Categories.values();
 		
 		for(int i = 0; i < valuesArray3.length; i++){
 			System.out.println(valuesArray3[i].toString());
@@ -40,7 +40,7 @@ public class LivreLogic {
 		String categorieStr = valuesArray3[categorieId - 1].getCategorie();
 
 		System.out.println("choisir la langue (saisir le numero)");
-		langues[] valuesArray2 = langues.values();	
+		Langues[] valuesArray2 = Langues.values();	
 		for(int i = 0; i < valuesArray2.length; i++){
 			System.out.println(valuesArray2[i].toString());
 		}

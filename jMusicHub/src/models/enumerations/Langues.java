@@ -1,6 +1,6 @@
-package models;
+package models.enumerations;
 
-public enum langues{
+public enum Langues{
 
 	FRANCAIS(1, "francais"),
 	ANGLAIS(2, "anglais"),
@@ -11,7 +11,7 @@ public enum langues{
 	private int numero;
 	private String langue;
 
-	private langues(int numero, String langue){
+	private Langues(int numero, String langue){
 		this.numero = numero;
 		this.langue = langue;
 	}

@@ -1,6 +1,8 @@
 package interfaces.Menus;
 import java.util.Scanner;
 
+import models.enumerations.Categories;
+import models.enumerations.Langues;
 import interfaces.Console.BasConsole;
 import interfaces.Console.ClearConsole;
 import interfaces.Console.EnTeteConsole;
@@ -8,8 +10,6 @@ import logic.LivreLogic;
 import main.MainApp;
 import models.Livre;
 import models.LivresList;
-import models.categories;
-import models.langues;
 
 
 public class MenuLivres {
@@ -21,9 +21,6 @@ public class MenuLivres {
 		livreLogic.readLivres();
 	}
 	
-	//public static void main(String[] Args){
-	//enuLivres.menuLivres();
-	//
 	
 	public void menuLivres() {
 		ClearConsole.clear();

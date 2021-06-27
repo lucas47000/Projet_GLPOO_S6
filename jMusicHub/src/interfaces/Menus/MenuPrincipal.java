@@ -18,11 +18,6 @@ public class MenuPrincipal {
 		menuChansons = new MenuChansons();
 	}
 	
-	//Affiche le menu d'acceuil du programme :
-	//public static void main(String[] Args){
-	//	MenuPrincipal.menuPrincipal();
-	//}
-	
 	public void setLivresList(LivresList _livresList) {
 		livresList = _livresList;
 	}

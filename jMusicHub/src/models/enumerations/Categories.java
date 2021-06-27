@@ -1,7 +1,7 @@
-package models;
+package models.enumerations;
 //la classe categories permet de recenser
 //
-public enum categories{
+public enum Categories{
 
 	JEUNESSSE(1, "jeunesse"),
 	ROMAN(2, "roman"),
@@ -12,7 +12,7 @@ public enum categories{
 	private int numero;
 	private String categorie;
 
-	private categories(int numero, String categorie){
+	private Categories(int numero, String categorie){
 		this.numero = numero;
 		this.categorie = categorie;
 	}

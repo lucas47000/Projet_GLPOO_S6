@@ -1,7 +1,7 @@
-package models;
+package models.enumerations;
 
 
-public enum genres{
+public enum Genres{
 
 	JAZZ(1, "jazz"),
 	CLASSIQUE(2, "classique"),
@@ -13,7 +13,7 @@ public enum genres{
 	private int numero;
 	private String genre;
 
-	private genres(int numero, String genre){
+	private Genres(int numero, String genre){
 		this.numero = numero;
 		this.genre = genre;
 	}
