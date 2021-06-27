@@ -10,7 +10,7 @@ import java.io.ObjectInputStream;
 
 
 
-public class Playlists extends fichierData{
+public class PlaylistsList extends fichierData{
 
 	 List<Playlist> listPlaylists = new ArrayList<>();
 

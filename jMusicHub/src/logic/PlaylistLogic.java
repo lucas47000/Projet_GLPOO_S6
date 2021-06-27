@@ -1,7 +1,7 @@
 package logic;
 
 public class PlaylistLogic {
-	private static Playlist askNewPlaylist(chansons listeChansons, livres listeLivres, Playlists listePlaylists){
+	private static Playlist askNewPlaylist(chansons listeChansons, livres listeLivres, PlaylistsList listePlaylists){
 		char choix;
 		String nom;
 		Scanner saisiePlaylist = new Scanner(System.in);	
@@ -35,11 +35,11 @@ public class PlaylistLogic {
 		return newPlaylist;
 	}	
 
-	private static void savePlaylist(Playlists listePlaylist){
+	private static void savePlaylist(PlaylistsList listePlaylist){
 		listePlaylist.save("savePlaylist.data");
 	}
 	
-	private static void affichePlaylist(Playlists listePlaylist){	
+	private static void affichePlaylist(PlaylistsList listePlaylist){	
 		listePlaylist.affiche();
 	}
 }
