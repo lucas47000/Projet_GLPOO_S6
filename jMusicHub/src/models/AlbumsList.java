@@ -33,7 +33,7 @@ public class AlbumsList implements Serializable{
                 try{
                         final FileOutputStream fichier = new FileOutputStream(filePass);
                         oos = new ObjectOutputStream(fichier);
-
+                        System.out.println(listAlbums.size());
                         oos.writeObject(listAlbums);
 
                         oos.flush();
@@ -56,6 +56,7 @@ public class AlbumsList implements Serializable{
                         final FileInputStream fichier = new FileInputStream(filePass);
                         oos = new ObjectInputStream(fichier);
                         listAlbums = (ArrayList) oos.readObject();
+                        System.out.println(listAlbums.size());
                         oos.close();
                 }
                 catch (final java.io.IOException e){

@@ -18,7 +18,7 @@ public class PlaylistLogic {
 	    listeChanson = new ChansonsList();
 	}
 	
-	public Playlist askNewPlaylist(){
+	public void askNewPlaylist(){
 		char choix;
 		String nom;
 		Scanner saisiePlaylist = new Scanner(System.in);	
@@ -52,7 +52,7 @@ public class PlaylistLogic {
 		}while(choix != '3');
 
 		Playlist newPlaylist = new Playlist(nom, 0);
-		return newPlaylist;
+		listePlaylist.save("savePlaylist.data");
 	}	
 
 	/*private static void savePlaylist(PlaylistsList listePlaylist){

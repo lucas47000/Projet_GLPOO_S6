@@ -11,7 +11,7 @@ public class MenuAlbums { //classe regroupants le menu et les sous menus relatif
 
 	MenuAlbums() {
 		albumLogic = new AlbumLogic();
-		//albumLogic.readAlbums();
+		albumLogic.readAlbums();
 	}
 	
 	
@@ -80,6 +80,7 @@ public class MenuAlbums { //classe regroupants le menu et les sous menus relatif
 		  default:
 			  if (reponse.length() != 0){
 				  //recupChansonsAlbum(reponse)
+				  
 				  System.out.print("ICI METHODE POUR AFFICHER LES CHANSONS DE L'ALBUM SELECTIONNE");
 					BasConsole.workInProgress("Lister les musiques d'un album", "albums");
 					this.menuAlbums();
@@ -109,16 +110,13 @@ public class MenuAlbums { //classe regroupants le menu et les sous menus relatif
 		
 		switch(reponse) {
 		  case "t":
-			  //EnTeteConsole.question(true, "Choisisez le critère de tri des albums :");
-			  //reponse = sc.nextLine();
-			  // ICI : methode d'affichage des albums avec parametre 'typeDeTri'/(réponse)
-				BasConsole.workInProgress("Lister tous les albums/ avec choix de methode de tri", "albums");
+			  albumLogic.afficheAlbums();
 				menuAlbums();
 			  break;
 		  case "a":
 			  // ICI : methode d'affichage des albums d'un artiste par date de sortie
-				BasConsole.workInProgress("Lister les albums d'un artiste par date de sortie", "albums");
-				menuAlbums();
+				//BasConsole.workInProgress("Lister les albums d'un artiste par date de sortie", "albums");
+			  this.menuAlbums();
 			  break;
 		  case "r":
 			  this.menuAlbums();
@@ -133,16 +131,14 @@ public class MenuAlbums { //classe regroupants le menu et les sous menus relatif
 	}
 	
 	public void menuAjoutAlbum(){
-		//ICI : appel methode
-		//logic.albumsLogic.ajoutAlbum
-		BasConsole.workInProgress("Ajout d'un album", "albums");
+		albumLogic.askNewAlbum();
+		albumLogic.saveAlbums();
 		menuAlbums();
 	}
 
 	public void menuAjoutChansonAlbum(){
-		//ICI : appel methode
-		//logic.albumsLogic.ajoutChansonAlbum
-		BasConsole.workInProgress("Ajout d'une musique à un album", "albums");
+		albumLogic.addChansonToAlbum();
+		albumLogic.saveAlbums();
 		menuAlbums();
 	}
 

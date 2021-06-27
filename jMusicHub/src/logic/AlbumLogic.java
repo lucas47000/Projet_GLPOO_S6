@@ -13,12 +13,14 @@ import models.LivresList;
 public class AlbumLogic {
 	
 	AlbumsList listeAlbum;
+	ChansonsList listeChanson;
 	
 	public AlbumLogic(){
 	    listeAlbum = new AlbumsList();
+	    listeChanson = new ChansonsList();
 	}
 	
-	public Album askNewAlbum(){
+	public void askNewAlbum(){
 		Scanner saisieAlbum = new Scanner(System.in);
 		boolean lecture = false;
 		String date = null;
@@ -47,7 +49,7 @@ public class AlbumLogic {
 		}while(lecture == false);
 
 		Album newAlbum = new Album(titre, artiste, duree, date, 0);
-		return newAlbum;
+		listeAlbum.save("saveAlbum.data");
 	
 	}
 	
@@ -61,18 +63,18 @@ public class AlbumLogic {
 
 	
 //-----------------------------------------------------------------------
-	public void addChansonToAlbum(AlbumsList listeAlbums, ChansonsList listeChansons){	
+	public void addChansonToAlbum(){	
 		Album _album = null;
 		Scanner saisie = new Scanner(System.in); 
-		afficheAlbums(listeAlbums);
+		afficheAlbums(listeAlbum);
 		
 		System.out.println("Saisir l'id de l'album à éditer");
 		int idAlbum = new Integer(saisie.nextLine());
 		
-		_album = listeAlbums.getAlbum(idAlbum);	
+		_album = listeAlbum.getAlbum(idAlbum);	
 		_album.affiche();
 	
-		listeChansons.affiche();
+		listeChanson.affiche();
 		System.out.println("Saisir l'id de la chanson à insérer");
 		int idChanson = new Integer(saisie.nextLine());		
 		_album.add(idChanson);	
@@ -80,32 +82,32 @@ public class AlbumLogic {
 	
 	
 //-----------------------------------------------------------------------------
-	public void afficheChansonAlbum(AlbumsList listeAlbums, ChansonsList listeChansons){
+	public void afficheChansonAlbum(){
 		Album _album = null;
 		Scanner saisie = new Scanner(System.in); 
-		afficheAlbums(listeAlbums);
+		afficheAlbums(listeAlbum);
 		
 		System.out.println("Saisir l'id de l'album à afficher");
 		int idAlbum = new Integer(saisie.nextLine());
 		
-		_album = listeAlbums.getAlbum(idAlbum);	
+		_album = listeAlbum.getAlbum(idAlbum);	
 		_album.affiche();
 		
 		List liste = _album.get();
 		for (int i=0; i<liste.size();i++){
-			listeChansons.affiche((int) liste.get(i));
+			listeChanson.affiche((int) liste.get(i));
 		}
 
 	}
-	public void afficheLivres(){
+	public void afficheAlbums(){
 		listeAlbum.affiche();
 	}
 
-	public void saveLivres(){
+	public void saveAlbums(){
 		listeAlbum.save("saveAlbum.data");
 	}
 	
-	public void readLivres(){
+	public void readAlbums(){
 		listeAlbum.read("saveAlbum.data");
 	}
 	
