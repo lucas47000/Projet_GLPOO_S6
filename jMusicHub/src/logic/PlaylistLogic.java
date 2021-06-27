@@ -1,14 +1,31 @@
 package logic;
 
+import java.util.Scanner;
+
+import models.ChansonsList;
+import models.LivresList;
+import models.Playlist;
+import models.PlaylistsList;
+
 public class PlaylistLogic {
-	private static Playlist askNewPlaylist(chansons listeChansons, livres listeLivres, PlaylistsList listePlaylists){
+	PlaylistsList listePlaylist;
+	LivresList listeLivre;
+	ChansonsList listeChanson;
+	
+	public PlaylistLogic(){
+	    listePlaylist = new PlaylistsList();
+	    listeLivre = new LivresList();
+	    listeChanson = new ChansonsList();
+	}
+	
+	public Playlist askNewPlaylist(){
 		char choix;
 		String nom;
 		Scanner saisiePlaylist = new Scanner(System.in);	
 		System.out.println("Saisir le nom: ");
 		nom = saisiePlaylist.nextLine();
 		Playlist playList = new Playlist(nom, 0);
-		listePlaylists.add(playList);
+		listePlaylist.add(playList);
 
 
 		do{		
@@ -17,16 +34,19 @@ public class PlaylistLogic {
 		 	choix = nom.charAt(0);
 			
 			if(choix == '1'){
-				listeChansons.affiche();
+				listeChanson.read("saveChanson.data");
+				listeChanson.affiche();
 				System.out.println("Saisir l'id de la chanson à insérer");
 				int idChanson = new Integer(saisiePlaylist.nextLine());		
 				playList.addChanson(idChanson);	
 			}
 			else if(choix == '2'){
-				listeLivres.affiche();
+				listeLivre.read("saveLivre.data");
+				listeLivre.affiche();
 				System.out.println("Saisir l'id du livre audio à insérer");
 				int idLivre = new Integer(saisiePlaylist.nextLine());		
 				playList.addLivre(idLivre);	
+				
 			}
 
 		}while(choix != '3');
@@ -35,11 +55,25 @@ public class PlaylistLogic {
 		return newPlaylist;
 	}	
 
-	private static void savePlaylist(PlaylistsList listePlaylist){
+	/*private static void savePlaylist(PlaylistsList listePlaylist){
 		listePlaylist.save("savePlaylist.data");
 	}
 	
 	private static void affichePlaylist(PlaylistsList listePlaylist){	
 		listePlaylist.affiche();
+	}*/
+
+
+	public void affichePlaylists(){
+		listePlaylist.affiche();
+	}	
+
+	public void savePlaylists(){
+		listePlaylist.save("savePlaylist.data");
 	}
+	
+	public void readLPlaylists(){
+		listePlaylist.read("savePlaylist.data");
+	}
+	
 }

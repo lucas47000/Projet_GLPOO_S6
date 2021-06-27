@@ -1,51 +1,24 @@
 package models;
+import java.io.Serializable;
 
-public class Piste {
 
-	private int idPiste;
-	private String titrePiste;
-	private int dureePiste;
-	private String contenuPiste;
-	
-	public Piste() {
-    }
-    
-	public Piste(int idPiste, String titrePiste, int dureePiste, String contenuPiste) {
-		this.idPiste = idPiste;
-		this.titrePiste = titrePiste;
-		this.dureePiste = dureePiste;
-		this.contenuPiste = contenuPiste;
+public class Piste implements Serializable{
+
+	char type;
+	int id;
+
+	public Piste(char _type, int _id){
+		this.type = _type;
+		this.id = _id;
 	}
 
-	public int getIdPiste() {
-		return idPiste;
+
+	public char getType(){
+		return this.type;
 	}
 
-	public void setIdPiste(int idPiste) {
-		this.idPiste = idPiste;
+	public int getId(){
+		return this.id;
 	}
 
-	public String getTitrePiste() {
-		return titrePiste;
-	}
-
-	public void setTitrePiste(String titrePiste) {
-		this.titrePiste = titrePiste;
-	}
-
-	public int getDureePiste() {
-		return dureePiste;
-	}
-
-	public void setDureePiste(int dureePiste) {
-		this.dureePiste = dureePiste;
-	}
-
-	public String getContenuPiste() {
-		return contenuPiste;
-	}
-
-	public void setContenuPiste(String contenuPiste) {
-		this.contenuPiste = contenuPiste;
-	}
 }

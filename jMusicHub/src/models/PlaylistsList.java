@@ -10,7 +10,7 @@ import java.io.ObjectInputStream;
 
 
 
-public class PlaylistsList extends fichierData{
+public class PlaylistsList implements Serializable{
 
 	 List<Playlist> listPlaylists = new ArrayList<>();
 

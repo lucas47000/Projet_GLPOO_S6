@@ -8,12 +8,12 @@ import java.io.ObjectOutputStream;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
-public class Playlist implements Serializable{
+public class Playlist{
 	
 	String nom;
 	int id;
 	
-	List<piste> listPiste = new ArrayList<>();
+	List<Piste> listPiste = new ArrayList<>();
 	
 	public void affiche(){
 		System.out.println("id:"+id+" nom: "+nom);
@@ -36,12 +36,12 @@ public class Playlist implements Serializable{
 	}	
 
 	public void addChanson(int id){
-		piste p = new piste('c',id);
+		Piste p = new Piste('c',id);
 		listPiste.add(p);
 	}
 
 	public void addLivre(int id){
-		piste p = new piste('l',id);
+		Piste p = new Piste('l',id);
 		listPiste.add(p);
 	}
 

@@ -1,19 +1,30 @@
 package interfaces.Menus;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 import interfaces.Console.BasConsole;
 import interfaces.Console.ClearConsole;
 import interfaces.Console.EnTeteConsole;
 import interfaces.Menus.*;
+import logic.LivreLogic;
+import logic.PlaylistLogic;
+import models.LivresList;
+import models.PlaylistsList;
 
-public class MenuPlaylists {
+public class MenuPlaylists{
 	
-	public static void main(String[] Args){
-		MenuPlaylists.menuPlaylists();
+	PlaylistLogic playlistLogic;
+	PlaylistsList playlistsList;
+	
+	MenuPlaylists(){
+		playlistLogic = new PlaylistLogic();
+		playlistLogic.readLPlaylists();
+		
 	}
+	
 
-	public static void menuPlaylists() {
+	public void menuPlaylists() {
 		ClearConsole.clear();
 
 		EnTeteConsole.enTeteMenu("MENU PLAYLISTS");
@@ -27,32 +38,34 @@ public class MenuPlaylists {
 		switchMenuPlaylists();
 	}
 
-	public static void switchMenuPlaylists() {
+	public void switchMenuPlaylists() {
 		String reponse = new String();
 		Scanner sc = new Scanner(System.in);
 		reponse = sc.nextLine();
 		
 		switch(reponse) {
 		  case "a":
-			  //listePlaylists();
+			  playlistLogic.affichePlaylists();
 			  switchRetourMenuPlaylists();
 			  break;
 		  case "n":
-			  //ajoutplaylist();
+			  playlistLogic.askNewPlaylist();
+			  switchRetourMenuPlaylists();
 			  break;
 		  case "s":
 			  //supprimerplaylist();
+			  switchRetourMenuPlaylists();
 			  break;
 		  case "p":
-			  MenuPrincipal.menuPrincipal();
+			  
 			  break;
 		  default:
 			  System.out.print ("Saisie incorrecte, veuillez réessayer : ");
-			  MenuPlaylists.menuPlaylists();
+			  this.menuPlaylists();
 		}		
 	}
 	
-	public static void switchRetourMenuPlaylists() {
+	public void switchRetourMenuPlaylists() {
 		  BasConsole.afficheRetourMenuPrecedent("des playlists");
 		  String reponse = new String();
 		  Scanner sc = new Scanner(System.in);
@@ -60,7 +73,7 @@ public class MenuPlaylists {
 		  
 		  switch(reponse) {
 		  case "r":
-			  MenuPlaylists.menuPlaylists();
+			  this.menuPlaylists();
 			  break;
 		  default:
 			  System.out.print ("Saisie incorrecte, veuillez réessayer : \n\n");

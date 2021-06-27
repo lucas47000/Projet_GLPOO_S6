@@ -13,7 +13,7 @@ import java.util.Collections;
 //
 
 
-public class albums extends fichierData{
+public class AlbumsList{
 
 	 List<album> listAlbums = new ArrayList<>();
 

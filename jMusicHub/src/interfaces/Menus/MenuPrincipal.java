@@ -4,18 +4,26 @@ import java.util.Scanner;
 import logic.LivreLogic;
 import models.ChansonsList;
 import models.LivresList;
+import models.PlaylistsList;
+import models.AlbumsList;
 import interfaces.Console.*;
 
 public class MenuPrincipal {
 	static LivresList livresList;
 	static ChansonsList chansonsList;
+	static PlaylistsList playlistsList;
+	static AlbumsList albumsList;
 	
 	MenuLivres menuLivres;
 	MenuChansons menuChansons;
+	MenuPlaylists menuPlaylists;
+	MenuAlbums menuAlbums;
 	
 	public MenuPrincipal() {
 		menuLivres = new MenuLivres();
 		menuChansons = new MenuChansons();
+		menuPlaylists = new MenuPlaylists();
+		menuAlbums = new MenuAlbums();
 	}
 	
 	public void setLivresList(LivresList _livresList) {
@@ -25,6 +33,15 @@ public class MenuPrincipal {
 	public void setLivresList(ChansonsList _chansonsList) {
 		chansonsList = _chansonsList;
 	}
+	
+	public void setPlaylistsList(PlaylistsList _playlistsList) {
+		playlistsList = _playlistsList;
+	}
+	
+	public void setAlbumList(AlbumsList _albumsList) {
+		albumsList = _albumsList;
+	}
+	
 	
 	public void menuPrincipal() {
 		
@@ -58,11 +75,11 @@ public class MenuPrincipal {
 			  this.menuPrincipal();
 			  break;
 		  case "a":
-			  MenuAlbums.menuAlbums();
+			  menuAlbums.menuAlbums();
 			  this.menuPrincipal();
 			  break;
 		  case "p":
-			  MenuPlaylists.menuPlaylists();
+			  menuPlaylists.menuPlaylists();
 			  this.menuPrincipal();
 			  break;
 		  case "q":

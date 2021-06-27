@@ -1,7 +1,7 @@
 package interfaces.Menus;
 import interfaces.Console.*;
 import java.util.Scanner;
-import
+
 
 public class MenuAlbums { //classe regroupants le menu et les sous menus relatifs à la manipulation des albums
 	
