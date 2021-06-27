@@ -7,10 +7,18 @@ import java.util.Scanner;
 import models.Album;
 import models.AlbumsList;
 import models.ChansonsList;
+import models.LivresList;
 
 
 public class AlbumLogic {
-	private static Album askNewAlbum(){
+	
+	AlbumsList listeAlbum;
+	
+	public AlbumLogic(){
+	    listeAlbum = new AlbumsList();
+	}
+	
+	public Album askNewAlbum(){
 		Scanner saisieAlbum = new Scanner(System.in);
 		boolean lecture = false;
 		String date = null;
@@ -43,16 +51,17 @@ public class AlbumLogic {
 	
 	}
 	
-	private static void afficheAlbums(AlbumsList listeAlbum){	
+	public void afficheAlbums(AlbumsList listeAlbum){	
 		listeAlbum.affiche();
 	}
 
-	private static void saveAlbums(AlbumsList listeAlbum){
+	public void saveAlbums(AlbumsList listeAlbum){
 		listeAlbum.save("saveAlbum.data");
 	}
 
+	
 //-----------------------------------------------------------------------
-	private static void addChansonToAlbum(AlbumsList listeAlbums, ChansonsList listeChansons){	
+	public void addChansonToAlbum(AlbumsList listeAlbums, ChansonsList listeChansons){	
 		Album _album = null;
 		Scanner saisie = new Scanner(System.in); 
 		afficheAlbums(listeAlbums);
@@ -68,8 +77,10 @@ public class AlbumLogic {
 		int idChanson = new Integer(saisie.nextLine());		
 		_album.add(idChanson);	
 	}
+	
+	
 //-----------------------------------------------------------------------------
-	private static void afficheChansonAlbum(AlbumsList listeAlbums, ChansonsList listeChansons){
+	public void afficheChansonAlbum(AlbumsList listeAlbums, ChansonsList listeChansons){
 		Album _album = null;
 		Scanner saisie = new Scanner(System.in); 
 		afficheAlbums(listeAlbums);
@@ -86,4 +97,16 @@ public class AlbumLogic {
 		}
 
 	}
+	public void afficheLivres(){
+		listeAlbum.affiche();
+	}
+
+	public void saveLivres(){
+		listeAlbum.save("saveAlbum.data");
+	}
+	
+	public void readLivres(){
+		listeAlbum.read("saveAlbum.data");
+	}
+	
 }

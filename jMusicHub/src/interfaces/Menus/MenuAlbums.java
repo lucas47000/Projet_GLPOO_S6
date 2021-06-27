@@ -1,16 +1,23 @@
 package interfaces.Menus;
 import interfaces.Console.*;
+import logic.AlbumLogic;
+import logic.LivreLogic;
+
 import java.util.Scanner;
 
 
 public class MenuAlbums { //classe regroupants le menu et les sous menus relatifs à la manipulation des albums
-	
-	/*public static void main (String[] Args){
-		menuAlbums();
-	}*/
+	AlbumLogic albumLogic;
 
+	MenuAlbums() {
+		albumLogic = new AlbumLogic();
+		//albumLogic.readAlbums();
+	}
+	
+	
 //*****************************Menu relatif à la manipulation des albums****************************
 	public void menuAlbums() {
+		
 		ClearConsole.clear();
 
 		EnTeteConsole.enTeteMenu("  MENU ALBUMS");

@@ -50,6 +50,7 @@ public class MenuPlaylists{
 			  break;
 		  case "n":
 			  playlistLogic.askNewPlaylist();
+			  playlistLogic.savePlaylists();
 			  switchRetourMenuPlaylists();
 			  break;
 		  case "s":

@@ -8,7 +8,7 @@ import java.io.ObjectOutputStream;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
-public class Playlist{
+public class Playlist implements Serializable{
 	
 	String nom;
 	int id;

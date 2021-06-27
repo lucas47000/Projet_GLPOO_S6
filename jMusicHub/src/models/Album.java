@@ -13,7 +13,7 @@ import java.io.ObjectInputStream;
 //
 //un album a un id, un titre, un artiste, une duree et une date de sortie
 
-public class Album{
+public class Album implements Comparable<Album>{
 	
 	String titre;
 	String artiste;

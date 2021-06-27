@@ -11,8 +11,7 @@ import java.io.ObjectInputStream;
 import java.util.Collections;
 
 //la class albums permet la gestion de l'objet  album (création, lecture, sauvegarde)
-//
-//
+
 
 
 public class AlbumsList implements Serializable{
