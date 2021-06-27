@@ -47,11 +47,11 @@ public class ChansonLogic {
 	
 
 	public void saveChansons(){
-		listeChanson.save("src\\dao\\data\\saveChanson.data");
+		listeChanson.save("saveChanson.data");
 	}
 	
 	public void readChansons(){
-		listeChanson.read("src\\dao\\data\\saveChanson.data");
+		listeChanson.read("saveChanson.data");
 	}
 	
 	//====================BLOC AFFICHAGE==================================

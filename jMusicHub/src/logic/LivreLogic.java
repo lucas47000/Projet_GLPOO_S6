@@ -59,11 +59,11 @@ public class LivreLogic {
 	}
 
 	public void saveLivres(){
-			listeLivre.save("src\\dao\\data\\saveLivre.data");
+			listeLivre.save("saveLivre.data");
 	}
 		
 	public void readLivres(){
-			listeLivre.read("src\\dao\\data\\saveLivre.data");
+			listeLivre.read("saveLivre.data");
 	}
 	 
 	//--------------------------------------------
