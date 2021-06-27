@@ -1,13 +1,13 @@
 package logic;
 
 public class PlaylistLogic {
-	private static playlist askNewPlaylist(chansons listeChansons, livres listeLivres, playlists listePlaylists){
+	private static Playlist askNewPlaylist(chansons listeChansons, livres listeLivres, Playlists listePlaylists){
 		char choix;
 		String nom;
 		Scanner saisiePlaylist = new Scanner(System.in);	
 		System.out.println("Saisir le nom: ");
 		nom = saisiePlaylist.nextLine();
-		playlist playList = new playlist(nom, 0);
+		Playlist playList = new Playlist(nom, 0);
 		listePlaylists.add(playList);
 
 
@@ -31,15 +31,15 @@ public class PlaylistLogic {
 
 		}while(choix != '3');
 
-		playlist newPlaylist = new playlist(nom, 0);
+		Playlist newPlaylist = new Playlist(nom, 0);
 		return newPlaylist;
 	}	
 
-	private static void savePlaylist(playlists listePlaylist){
+	private static void savePlaylist(Playlists listePlaylist){
 		listePlaylist.save("savePlaylist.data");
 	}
 	
-	private static void affichePlaylist(playlists listePlaylist){	
+	private static void affichePlaylist(Playlists listePlaylist){	
 		listePlaylist.affiche();
 	}
 }
