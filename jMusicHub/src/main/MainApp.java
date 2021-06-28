@@ -4,6 +4,7 @@ import interfaces.Menus.MenuPrincipal;
 import logic.LivreLogic;
 import models.ChansonsList;
 import models.LivresList;
+import models.logs.Log;
 
 
 public class MainApp {
@@ -14,6 +15,7 @@ public class MainApp {
 	
 	public static void main(String[] args) {
 		
+		Log.log("Application start");
 		//ChansonsList chansonsList = new ChansonsList();
 		//LivresList livresList = new LivresList();
 		MenuPrincipal  menuPrincipal = new MenuPrincipal();
