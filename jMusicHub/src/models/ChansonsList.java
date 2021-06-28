@@ -8,6 +8,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import models.Chanson;
+import models.logs.Log;
 
 public class ChansonsList implements Serializable{
 	public static List<Chanson> listChansons = new ArrayList<>();
@@ -16,11 +17,13 @@ public class ChansonsList implements Serializable{
 		int id = listChansons.size() + 1;
 		_chanson.setId(id);
 		listChansons.add( _chanson);
-		System.out.println("add chanson");
+		
+		Log.log("add chanson");
 	}
 
 	public void save(String filePass){  //serialisation
-		System.out.println("save chanson");
+		
+		Log.log("save chanson");
 
 		ObjectOutputStream oos = null;
 

@@ -2,6 +2,9 @@ package models;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import models.logs.Log;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -17,11 +20,11 @@ public class LivresList implements Serializable{
 		int id = listLivres.size() + 1;
 		_livre.setId(id);
 		listLivres.add( _livre);
-		System.out.println("add livre");
+		Log.log("add livre");
 	}
 
 	public void save(String filePass){    //serialisation
-		System.out.println("save livre");	
+		Log.log("save livre");
 	
 		ObjectOutputStream oos = null;
 
