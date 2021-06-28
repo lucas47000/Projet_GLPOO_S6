@@ -21,11 +21,11 @@ public class PlaylistsList implements Serializable{
                 int id = listPlaylists.size() + 1;
                 _playlist.setId(id);
                 listPlaylists.add( _playlist);
-                Log.log("add playlist");
+                Log.log("add playlist\n");
         }
 
         public void save(String filePass){  //serialisation
-        	Log.log("save playlist");
+        	Log.log("save playlist\n");
 
                 ObjectOutputStream oos = null;
 

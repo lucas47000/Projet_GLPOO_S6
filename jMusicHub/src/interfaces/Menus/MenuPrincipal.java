@@ -84,7 +84,7 @@ public class MenuPrincipal {
 			  this.menuPrincipal();
 			  break;
 		  case "q":
-			  Log.log("Application exit");
+			  Log.log("Application exit\n");
 			  System.exit(0);
 		  default:
 			  System.out.print ("Saisie incorrecte, veuillez réessayer : ");

@@ -15,7 +15,7 @@ public class MainApp {
 	
 	public static void main(String[] args) {
 		
-		Log.log("Application start");
+		Log.log("Application start\n");
 		
 		//ChansonsList chansonsList = new ChansonsList();
 		//LivresList livresList = new LivresList();

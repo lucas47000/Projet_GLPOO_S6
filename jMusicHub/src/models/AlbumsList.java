@@ -25,11 +25,11 @@ public class AlbumsList implements Serializable{
                 int id = listAlbums.size() + 1;
                 _album.setId(id);
                 listAlbums.add( _album);
-                Log.log("add album");
+                Log.log("add album\n");
         }
 
         public void save(String filePass){  //serialisation
-        	Log.log("save album");
+        	Log.log("save album\n");
 
                 ObjectOutputStream oos = null;
 

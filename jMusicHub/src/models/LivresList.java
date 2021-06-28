@@ -20,11 +20,11 @@ public class LivresList implements Serializable{
 		int id = listLivres.size() + 1;
 		_livre.setId(id);
 		listLivres.add( _livre);
-		Log.log("add livre");
+		Log.log("add livre\n");
 	}
 
 	public void save(String filePass){    //serialisation
-		Log.log("save livre");
+		Log.log("save livre\n");
 	
 		ObjectOutputStream oos = null;
 

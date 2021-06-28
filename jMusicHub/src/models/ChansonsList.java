@@ -18,12 +18,12 @@ public class ChansonsList implements Serializable{
 		_chanson.setId(id);
 		listChansons.add( _chanson);
 		
-		Log.log("add chanson");
+		Log.log("add chanson\n");
 	}
 
 	public void save(String filePass){  //serialisation
 		
-		Log.log("save chanson");
+		Log.log("save chanson\n");
 
 		ObjectOutputStream oos = null;
 
