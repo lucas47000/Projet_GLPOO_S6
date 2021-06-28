@@ -30,9 +30,18 @@ public class AlbumLogic {
 
 		System.out.println("Saisir l'artiste: ");
 		String artiste = saisieAlbum.nextLine();
-
-		System.out.println("saisir la duree: ");
-		int duree = new Integer(saisieAlbum.nextLine());
+		
+		int duree = 0;
+		boolean flag;
+		do {
+			System.out.println("saisir la duree: ");
+			flag = true;
+			try {
+				duree = new Integer(saisieAlbum.nextLine());
+			}catch(Exception e) {
+				flag = false;
+			}
+		}while(flag != true);
 
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		
