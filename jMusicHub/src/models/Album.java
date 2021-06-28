@@ -24,7 +24,7 @@ public class Album implements Serializable, Comparable<Album>{
 	List<Integer> listChansons = new ArrayList<>();
 	
 	public void affiche(){
-		System.out.println("id:"+id+" titre: "+titre+" artiste: "+artiste+"durÃ©e: "+duree+"date de sortie: "+dateDeSortie);
+		System.out.println("id:"+id+" titre: "+titre+" artiste: "+artiste+" durée: "+duree+" date de sortie: "+dateDeSortie);
 	}
 
 	public Album(String titre, String artiste, int duree, String dateDeSortie, int _id){

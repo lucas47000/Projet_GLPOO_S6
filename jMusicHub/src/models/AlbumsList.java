@@ -78,7 +78,18 @@ public class AlbumsList implements Serializable{
                 }
 
         }
-
+        
+        public void afficheArtiste(String artiste){
+        	System.out.println("affiche");
+            System.out.println(listAlbums.size());
+			Collections.sort(listAlbums);
+            for(int i = 0; i < listAlbums.size(); i++){
+                    Album _album = listAlbums.get(i);
+                    if (_album.artiste.compareTo(artiste) == 0) {
+                    	_album.affiche();
+                    }
+            }
+        }
 	
 	public Album getAlbum(int id){
 		Album _album = null;

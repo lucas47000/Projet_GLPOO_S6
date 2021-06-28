@@ -63,8 +63,9 @@ public class MenuAlbums { //classe regroupants le menu et les sous menus relatif
 	
 //============================Afficher les chansons d'un album=================================================
 	public void menuChansonsAlbum(){
+		albumLogic.afficheChansonAlbum();
 		EnTeteConsole.question(true, "Entrez ici le titre de l'album ('r' pour revenir au menu précédent) : \n");
-		switchChansonsAlbum();
+		
 	}
 	public void switchChansonsAlbum() {
 		String reponse = new String();

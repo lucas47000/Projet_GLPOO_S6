@@ -61,6 +61,11 @@ public class AlbumLogic {
 		listeAlbum.save("saveAlbum.data");
 	}
 
+	public void afficheAlbumsArtiste(AlbumsList listeAlbum){
+		Scanner saisie = new Scanner(System.in); 
+		System.out.println("Nom de l'artiste à rechercher : ");
+		listeAlbum.afficheArtiste(saisie.nextLine());
+	}
 	
 //-----------------------------------------------------------------------
 	public void addChansonToAlbum(){	
@@ -93,6 +98,7 @@ public class AlbumLogic {
 		_album = listeAlbum.getAlbum(idAlbum);	
 		_album.affiche();
 		
+		System.out.println("\nListe des chansons :");
 		List liste = _album.get();
 		for (int i=0; i<liste.size();i++){
 			listeChanson.affiche((int) liste.get(i));
