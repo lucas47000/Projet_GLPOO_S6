@@ -5,6 +5,7 @@ import logic.LivreLogic;
 import models.ChansonsList;
 import models.LivresList;
 import models.PlaylistsList;
+import models.logs.Log;
 import models.AlbumsList;
 import interfaces.Console.*;
 
@@ -83,6 +84,7 @@ public class MenuPrincipal {
 			  this.menuPrincipal();
 			  break;
 		  case "q":
+			  Log.log("Application exit");
 			  System.exit(0);
 		  default:
 			  System.out.print ("Saisie incorrecte, veuillez réessayer : ");
